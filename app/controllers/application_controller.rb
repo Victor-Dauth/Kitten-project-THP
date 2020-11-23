@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
   
+  #french translation (still to be perfected)
+  before_action do
+    I18n.locale = :fr # Or whatever logic you use to choose.
+  end
   # Config flash for the whole app --> To keep?
   # add_flash_types :success, :danger, :info, :warning, :alert
 
   # Include first name and last name into Devise process
+
 
   protect_from_forgery with: :exception
 

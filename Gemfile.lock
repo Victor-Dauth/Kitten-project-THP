@@ -76,6 +76,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.2)
+      devise (>= 4.7.1)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -236,6 +238,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
   devise (~> 4.7, >= 4.7.3)
+  devise-i18n
   jbuilder (~> 2.5)
   letter_opener (~> 1.7)
   listen (>= 3.0.5, < 3.2)
@@ -253,7 +256,7 @@ DEPENDENCIES
   webdrivers (~> 4.4, >= 4.4.1)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.1.4
