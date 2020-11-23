@@ -1,0 +1,8 @@
+<p>Bonjour <%= @resource.first_name %> et bienvenue sur KittyPic!</p>
+
+<p> Tu viens de créer un compte et nous en sommes ravis. Tu n'es plus qu'à un clic, il te reste juste à confirmer ton email :</p>
+
+<p><%= link_to 'Valider mon inscription', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>À bientôt, <br>
+L'équipe KittyPic </p>
