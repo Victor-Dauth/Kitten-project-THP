@@ -64,6 +64,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Letter opener to check sent emails in browser
   gem 'letter_opener', '~> 1.7'
+  gem 'rails-erd'
 end
 
 group :test do
