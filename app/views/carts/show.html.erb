@@ -1,0 +1,6 @@
+<ul>Liste des produits du panier
+
+<% @cart.orders.each do |item| %>
+  <li><%= item.item.title %> - <%= item.item.price %> </li>
+  <% end %>
+</ul>

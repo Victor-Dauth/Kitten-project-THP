@@ -17,6 +17,8 @@
     <li>
       <%= link_to "Edit profile", edit_user_registration_path %>
     </li>
+    <%= link_to "voir le panier", cart_path(current_user), class: "btn btn-primary" %>
+
 
   <% else %>
     <li>    
@@ -27,9 +29,9 @@
       <%= link_to "Sign up", new_user_registration_path %>
     </li>
 
+
   <% end %>
 </ul>
-
 
 
 <p>Voici tous les petits chatons trop mignons :</p>
@@ -44,8 +46,11 @@
      <h5 class="card-title"><%= item.title %> </h5>
      <img src="<%= item.image_url %>">
      <p class="card-text"><%= item.description %></p>
-     <p class="card-text"><%= item.price %></p>
-     <%= link_to "Passer commande", new_payment_path, class: "btn btn-primary"%>
-     <%= link_to "Voir le potin entier", item_path(item.id), class: "card-text"%>
+     <p class="card-text"><%= item.price %></p>     
+     <%= link_to "Voir le produit", item_path(item.id), class: "card-text"%>
+     <% if user_signed_in? %>
+        <%= link_to "Ajouter au panier", orders_path(item_id: item.id), method: 'POST' , class: "btn btn-primary"%>
+     <% else %>
+     <% end %>
 </div>
 <%end%>
