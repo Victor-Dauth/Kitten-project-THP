@@ -78,6 +78,10 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
     faker (2.14.0)
@@ -194,6 +198,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (5.28.0)
     table_print (1.5.7)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -242,6 +247,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.7, >= 4.7.3)
   devise-i18n
+  dotenv (~> 2.7, >= 2.7.6)
+  dotenv-rails (~> 2.7, >= 2.7.6)
   faker
   jbuilder (~> 2.5)
   letter_opener (~> 1.7)
@@ -253,6 +260,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe (~> 5.28)
   table_print
   turbolinks (~> 5)
   tzinfo-data

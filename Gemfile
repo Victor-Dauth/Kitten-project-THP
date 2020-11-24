@@ -30,6 +30,13 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise-i18n'
 gem 'bcrypt', '~> 3.1.7'
 
+# Dotenv to protect sensitive API keys
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+
+# Stripe for processing payments
+gem 'stripe', '~> 5.28'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -39,8 +46,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Gems to facilitate seed of db
 gem 'faker'
-
 gem 'table_print'
 
 group :development, :test do

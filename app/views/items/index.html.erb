@@ -45,8 +45,7 @@
      <img src="<%= item.image_url %>">
      <p class="card-text"><%= item.description %></p>
      <p class="card-text"><%= item.price %></p>
+     <%= link_to "Passer commande", new_payment_path, class: "btn btn-primary"%>
      <%= link_to "Voir le potin entier", item_path(item.id), class: "card-text"%>
-
-
 </div>
 <%end%>
