@@ -25,6 +25,7 @@ class CartsController < ApplicationController
     end
   end
 
+
 private
 
   def cart_params
