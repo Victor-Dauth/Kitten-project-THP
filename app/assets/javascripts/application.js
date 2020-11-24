@@ -13,4 +13,25 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//
+//= require jquery.min
+//= require popper.min
+//= require bootstrap.min
+//= require on-screen.umd.min
+//= require nouislider.min
+//= require bootstrap-datepicker.min
+//= require bootstrap-datepicker.fr.min
+//= require jquery.waypoints.min
+//= require owl.carousel.min
+//= require smooth-scroll.polyfills.min
+//= require jquery.fancybox.min
+//= require sticky-sidebar.min
+//= require leaflet
+//= require chartist.min
+//= require chartist-plugin-tooltip.min
+//= require jquery.vmap.min
+//= require jquery.vmap.france
+//=
+//= require autocomplete
+//= require jquery.slideform
+//= require spaces
