@@ -61,7 +61,6 @@
       <%if current_user.avatar.attached?%>
         <span class="mr-2"><%= image_tag(current_user.avatar, :alt => 'real avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
       <%else%>
-        <span class="mr-2"><%= image_tag('unnamed.jpg', :alt => 'default avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
       <% end %>
       <span><strong><%= current_user.first_name %></strong></span>
     <% end %>
