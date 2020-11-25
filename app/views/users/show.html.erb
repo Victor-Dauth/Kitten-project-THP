@@ -1,0 +1,28 @@
+<div class="profile_canvas d-flex flex-column align-items-center">
+
+  <img class="img-fluid rounded" src="https://picsum.photos/seed/picsum/1000/400" >
+
+  <%if @user.avatar.attached?%>
+    <%= image_tag(@user.avatar, :alt => 'real avatar', class:'img-thumbnail profile_pic rounded-circle m-3', style: 'height:200px;width:200px') %>
+  <%else%>
+  <%end%>
+
+  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+
+  <div class="link_edit_profile">
+    <%= link_to edit_user_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+      <i class="fas fa-user mr-2"></i>
+      <span>Edit Profile</span>
+    <% end %>
+  </div>
+
+  <div class="link_personal_settings">
+    <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+      <i class="fas fa-cog mr-2"></i>
+      <span>Settings & Privacy</span>
+    <% end %>
+  </div>
+
+</div>
+
+

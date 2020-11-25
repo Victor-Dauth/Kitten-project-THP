@@ -19530,7 +19530,7 @@ a.text-github:hover, a.text-github:focus {
   h3 {
         page-break-after: avoid;
     }
-  @    page {
+        page {
         size: a3;
     }
 
