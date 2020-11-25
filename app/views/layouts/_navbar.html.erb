@@ -1,15 +1,15 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-theme-primary navbar-expand-lg py-lg-3 px-lg-6 navbar-dark">
   <div class="container">
+    <a class="navbar-brand @@logo_classes" href="<%= root_path %>">
+      <%= image_tag('logo.jpg', class: 'navbar-brand-dark common', height: '40', alt: 'Logo light') %>
+      <%= image_tag('logo.jpg', class: 'navbar-brand-light common', height: '40', alt: 'Logo dark') %>
+    </a>
     <div class="navbar-collapse collapse" id="navbar_global" style="">
-      <a class="navbar-brand @@logo_classes" href="<%= root_path %>">
-        <img class="navbar-brand-dark common" src="url(asset_path(logo.jpg))" height="35" alt="Logo light">
-        <img class="navbar-brand-light common" src="url(asset_path(logo.jpg))" height="35" alt="Logo dark">
-      </a>
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a href="#">
-              <img src="#" height="35" alt="Logo Impact">
+            <a href="<%= root_path %>">
+              <%= image_tag('logo.jpg', height: '35', alt: 'Logo Impact') %>
             </a>
           </div>
           <div class="col-6 collapse-close">
