@@ -58,10 +58,6 @@
 
   <div class="link_personal_profile mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <%= active_link_to user_path(current_user.id), class:"btn btn-light rounded-pill d-inline-flex align-items-center", style:"height: 38px"  do %>
-      <%if current_user.avatar.attached?%>
-        <span class="mr-2"><%= image_tag(current_user.avatar, :alt => 'real avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
-      <%else%>
-      <% end %>
       <span><strong><%= current_user.first_name %></strong></span>
     <% end %>
   </div>
