@@ -93,11 +93,12 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Config mailer prod
-  config.action_mailer.perform_deliveries = true
+  #config.action_mailer.perform_deliveries = true
 
   # Mailer sync with devise gem
   # Like dev ?
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'kitten-project-thp.herokuapp.com' }
 end
 
 
