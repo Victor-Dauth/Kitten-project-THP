@@ -1,34 +1,167 @@
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
 
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
+<div class="section section-header section-image bg-tertiary overlay-primary text-white overflow-hidden pb-6" data-background="../assets/img/new-york-hero.jpg" style="background-image: url(asset_path('chaton_1.jpg'));">
+  <div class="container z-2">
+    <div class="row justify-content-center pt-3">
+      <div class="col-12 text-center">
+        <h1 class="mb-5">Trouve la photo du <span class="font-weight-bolder">Chaton</span> de tes rêves</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <li>
-      Voici ton nom : <%= current_user.first_name %> <%= current_user.last_name %>
-    </li>
+<div class="section section-lg pt-6">
+  <div id="spaces-container" class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="justify-content-between align-items-center d-none d-md-flex">
+          <div class="mr-3">
+            <h2 class="h5 mb-3 mb-md-0">Nous avons <span class="font-weiht-bolder text-primary"><%= @items.length %> </span>photo de chaton à vous proposer :</h2>
+          </div>
+          <div class="nav-wrapper position-relative p-0">
+            <ul class="nav nav-pills small-pills" id="tab-34" role="tablist">
+              <li class="nav-item pr-0">
+                <a class="nav-link text-sm-center border-0 active" id="tab-link-example-14" data-toggle="tab" href="#link-example-14" role="tab" aria-controls="link-example-14" aria-selected="false">
+                    <span class="nav-link-icon d-block"><span class="fas fa-th-large"></span></span>
+                </a>
+              </li>
+              <li class="nav-item pr-0">
+                <a class="nav-link text-sm-center border-0" id="tab-link-example-13" data-toggle="tab" href="#link-example-13" role="tab" aria-controls="link-example-13" aria-selected="true">
+                    <span class="nav-link-icon d-block"><span class="fas fa-th-list"></span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-content mt-4 mt-lg-4" id="tabcontentexample-5">
+          <div class="tab-pane fade" id="link-example-13" role="tabpanel" aria-labelledby="tab-link-example-13">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-10 col-md-6 col-lg-12 mb-4">
+                <!-- Card 1-->
+                <% @items.each do |item| %>
+                  <div class="card border-light mb-4 animate-up-5">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-12 col-lg-6 col-xl-5">
+                        <a href="<%= item_path(item.id) %>">
+                          <img src="<%= item.image_url %>" alt="lifestyle office" class="card-img p-2 rounded-xl">
+                        </a>
+                      </div>
+                      <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="card-body">
+                          <a href="<%= item_path(item.id) %>">
+                            <h4 class="h5"><%= item.title %></h4>
+                          </a>
+                          <div class="d-flex my-3">
+                            <span class="star fas fa-star text-warning"></span> 
+                            <span class="star fas fa-star text-warning"></span> 
+                            <span class="star fas fa-star text-warning"></span> 
+                            <span class="star fas fa-star text-warning"></span> 
+                            <span class="star fas fa-star text-warning"></span>
+                            <span class="badge badge-pill badge-primary ml-2">5</span>
+                          </div> 
+                          <div class="d-flex my-3">
+                            <%= item.description %>
+                          </div>
+                          <div class="d-flex justify-content-between">
+                            <div class="col pl-0">
+                              <span class="text-muted font-small d-block">Prix</span>
+                              <span class="h6 text-dark font-weight-bold"><%= item.price %></span>
+                            </div>
+                            <%# on pourrais rajouter une colone nombre de fois vendu si on as le temps
+                              <div class="col">
+                                <span class="text-muted font-small d-block mb-2">People</span>
+                                <span class="h5 text-dark font-weight-bold">24</span>
+                              </div>
+                            %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <%end%>
+                <!-- End of Card -->
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show active" id="link-example-14" role="tabpanel" aria-labelledby="tab-link-example-14">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <!-- Card 1-->
+                <% @items.each do |item| %>
+                  <div class="card border-light mb-4 animate-up-5">
+                    <a href="<%= item_path(item.id) %>" class="position-relative">
+                      <img src="<%= item.image_url %>" class="card-img-top rounded-xl p-2" alt="themesberg office">
+                    </a>
+                    <div class="card-body">
+                      <a href="<%= item_path(item.id) %>">
+                        <h4 class="h5"><%= item.title %></h4>
+                      </a>
+                      <div class="d-flex my-4">
+                        <span class="star fas fa-star text-warning"></span> 
+                        <span class="star fas fa-star text-warning"></span> 
+                        <span class="star fas fa-star text-warning"></span> 
+                        <span class="star fas fa-star text-warning"></span> 
+                        <span class="star fas fa-star text-warning"></span>
+                        <span class="badge badge-pill badge-primary ml-2">5.0</span>
+                      </div> 
+                      <div class="d-flex my-4">
+                        <%= item.description %>
+                      </div>
+                    </div>
+                    <div class="card-footer bg-soft border-top">
+                      <div class="d-flex justify-content-between">
+                        <div class="col pl-0">
+                          <span class="text-muted font-small d-block mb-2">Prix</span>
+                          <span class="h5 text-dark font-weight-bold"><%= item.price %></span>
+                        </div>
+                        <%# on pourrais rajouter une colone nombre de fois vendu si on as le temps
+                        <div class="col">
+                          <span class="text-muted font-small d-block mb-2">People</span>
+                          <span class="h5 text-dark font-weight-bold">24</span>
+                        </div>
+                        %>
+                      </div>
+                    </div>
+                  </div>
+                <%end%>
+                <!-- End of Card -->
+              </div>
+            </div>
+          </div>
+          <%# si on veux on poura faire des gage de navigation
+          <div class="col mt-3 d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" tabindex="-1" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+          %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
-    <li>
-      <%= link_to "Edit profile", edit_user_registration_path %>
-    </li>
 
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
 
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
 
-  <% end %>
-</ul>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -36,7 +169,7 @@
 
 <div class="list-group-item list-group-item-action" style="border: none">
 
-  <% @item.each do |item| %>
+  <% @items.each do |item| %>
 
 
  <div class="card" style="width : 18rem;">

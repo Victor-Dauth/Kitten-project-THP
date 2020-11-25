@@ -1,123 +1,60 @@
-<nav id="navbar-main" class="navbar navbar-main navbar-theme-primary navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-dark navbar-transparent headroom--not-bottom headroom--not-top headroom--pinned">
-        <div class="container">
-            <a class="navbar-brand d-none" href="../index.html">
-                <img class="navbar-brand-dark common" src="" height="35" alt="Logo light">
-                <img class="navbar-brand-light common" src="" height="35" alt="Logo dark">
+<nav id="navbar-main" class="navbar navbar-main navbar-theme-primary navbar-expand-lg py-lg-3 px-lg-6 navbar-dark">
+  <div class="container">
+    <div class="navbar-collapse collapse" id="navbar_global" style="">
+      <a class="navbar-brand @@logo_classes" href="<%= root_path %>">
+        <img class="navbar-brand-dark common" src="url(asset_path(logo.jpg))" height="35" alt="Logo light">
+        <img class="navbar-brand-light common" src="url(asset_path(logo.jpg))" height="35" alt="Logo dark">
+      </a>
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a href="#">
+              <img src="#" height="35" alt="Logo Impact">
             </a>
-            <div class="navbar-collapse collapse" id="navbar_global" style="">
-                <div class="navbar-collapse-header">
-                    <div class="row">
-                        <div class="col-6 collapse-brand">
-                            <a href="#">
-                                <img src="" height="35" alt="Logo Impact">
-                            </a>
-                        </div>
-                        <div class="col-6 collapse-close">
-                            <a href="#" role="button" class="fas fa-times collapsed" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation"></a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="navbar-nav navbar-nav-hover justify-content-center">
-                    <li class="nav-item dropdown">
-                        <a href="#" id="mainPagesDropdown" class="nav-link dropdown-toggle" aria-expanded="false" data-toggle="dropdown">
-                            <span class="nav-link-inner-text mr-1">Front pages</span>
-                            <i class="fas fa-angle-down nav-link-arrow"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-megamenu p-3 p-lg-4" aria-labelledby="mainPagesDropdown">
-                            <div class="row">
-                                <div class="col-6 col-lg-4">
-                                    <h6 class="d-block mb-3 text-primary">Main pages</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Landing</a>
-                                        </li>
-                                        
-                                    </ul>
-                                    <h6 class="d-block text-primary">Legal</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href=".#">Legal center</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Terms &amp; agreement</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <h6 class="d-block mb-3 text-primary">Listing</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">All spaces</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Map view</a>
-                                        </li>
-                                    </ul>
-                                    <h6 class="d-block mb-3 text-primary">Support</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Support center</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Support topic</a>
-                                        </li>
-                                    </ul>
-                                    <h6 class="d-block mb-3 text-primary">Blog</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Blog</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Blog post</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <h6 class="d-block mb-3 text-primary">User</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Sign in</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Sign up</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Forgot password</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href=".#">Reset password</a>
-                                        </li>
-                                    </ul>
-                                    <h6 class="d-block mb-3 text-primary">Special</h6>
-                                    <ul class="list-style-none mb-4">
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">404 Not Found</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">500 Server Error</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Maintenance</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Coming soon</a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Blank page</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="d-none d-lg-block @@cta_button_classes">
-                <a href="#" target="_blank" class="btn btn-md btn-outline-white animate-up-2 mr-3"><i class="fas fa-book mr-1"></i> <span class="d-xl-none">Docs</span> <span class="d-none d-xl-inline">Components</span></a>
-                <a href="#" target="_blank" class="btn btn-md btn-secondary animate-up-2"><i class="fas fa-shopping-bag mr-2"></i> Buy now</a>
-            </div>
-            <div class="d-flex d-lg-none align-items-center">
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            </div>
+          </div>
+          <div class="col-6 collapse-close">
+            <%# il faut trouver comment ajouter le simbole coix mais ça marche %>
+            <a href="#" role="button" class="fas fa-times collapsed" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation"></a>
+          </div>
         </div>
-    </nav>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover justify-content-center">
+        <%# quand on aura des admin
+        <li class="nav-item">
+          <a href="#"class="nav-link">
+            <span class="nav-link-inner-text mr-1">Ajoute une photo</span>
+            <i class="fas fa-angle-down nav-link-arrow"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#"class="nav-link">
+            <span class="nav-link-inner-text mr-1">Dashboard Admin</span>
+            <i class="fas fa-angle-down nav-link-arrow"></i>
+          </a>
+        </li>
+        %>
+      </ul>
+    </div>
+    <div class="d-none d-lg-block @@cta_button_classes">
+      <% if user_signed_in? %>
+        <a href="<%= edit_user_registration_path %>" class="btn btn-md btn-outline-white animate-up-2">
+          <span class="d-xl-inline">Edite Profil</span>
+        </a>
+        <a href="<%= destroy_user_session_path %>" data-method="delete" class="btn btn-md btn-outline-white animate-up-2 mr-3">
+          <span class="d-xl-inline">Se déconnecter</span>
+        </a>
+      <% else %>
+        <a href="<%= new_user_session_path %>" class="btn btn-md btn-outline-white animate-up-2">
+          <span class="d-xl-inline">Se connecter</span>
+        </a>
+        <a href="<%= new_user_registration_path %>" class="btn btn-md btn-outline-white animate-up-2 mr-3">
+          <span class="d-xl-inline">S'inscrire</span>
+        </a>
+      <% end %>
+      <a href="#" class="btn btn-md btn-secondary animate-up-2"><i class="fas fa-shopping-bag mr-2"></i> Buy now</a>
+    </div>
+    <div class="d-flex d-lg-none align-items-center">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    </div>
+  </div>
+</nav>
