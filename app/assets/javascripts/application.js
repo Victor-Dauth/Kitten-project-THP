@@ -15,7 +15,6 @@
 //= require turbolinks
 //
 //= require jquery.min
-//= require popper.min
 //= require bootstrap.min
 //= require headroom.min
 //= require on-screen.umd.min
