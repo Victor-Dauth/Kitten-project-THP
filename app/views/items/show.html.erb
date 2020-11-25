@@ -1,1 +1,164 @@
-     <h5><%= @item.title %> </h5>
+ <main>
+        <!-- Hero -->
+
+        <div class="section section-lg pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <!-- Tab -->
+                        <nav>
+                            <div class="nav nav-tabs flex-column flex-md-row border-light mb-3" id="nav-tab"
+                                role="tablist">
+                                <h5><%= @item.title %> </h5>
+                            </div>
+                        </nav>
+                        <!-- About Tab -->
+                        <div class="tab-content mt-5 mb-3" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                                <div class="row mb-5">
+                                    <div class="col-12">
+                                        <div class="fancy-gallery mb-5">
+                                            <div class="row">
+                                                <a href="../assets/img/conference-office.jpg" class="mb-4 col-6 col-sm-4 img-fluid"
+                                                    data-fancybox="images" data-caption="Conference Space">
+                                                    <img class="rounded" src="<%= @item.image_url %>" alt="" />
+
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <p> <%= @item.description %> 
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End of About Tab -->
+
+                        </div>
+                        <!-- End of tab -->
+                    </div>
+                    
+                    
+                    <aside class="col-12 col-lg-4 mt-3 mt-lg-0">
+                    	</br> </br></br></br>
+                        <div class="card bg-soft border-light p-3">
+
+                            <div class="d-flex align-items-baseline">
+
+                                <span class="h3 font-weight-bold mb-0 mr-1">€ <%= @item.price %></span>
+                            </div>
+                        </div>
+                        <div class="card border-light mt-4 p-3">
+                            <button class="btn btn-primary availability" value="06/20/2018">Ajouter au panier</button>
+                            
+                        </div>
+                        
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <section class="section bg-soft">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="mb-5 font-weight-bold">Les autres photos que vous pourriez aimer</h4>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Card -->
+                        <div class="card border-light mb-4 animate-up-5">
+                            <a href="./single-space.html" class="position-relative">
+                                <img src="../assets/img/meeting-office.jpg" class="card-img-top rounded-xl p-2" alt="wood office">
+                            </a>
+                            <div class="card-body">
+                                <a href="./single-space.html">
+                                    <h4 class="h5">Titre photo précédente</h4>
+                                </a>
+                            </div>
+                            <div class="card-footer border-top">
+                                <div class="d-flex justify-content-between">
+                                    <div class="col pl-0">
+                                        <span class="text-muted font-small d-block mb-2">Prix</span>
+                                        <span class="h5 text-dark font-weight-bold">50$</span>
+                                    </div>
+                                    <div class="col">
+                                        <span class="text-muted font-small d-block mb-2">bouton voir plus</span>
+                                        <span class="h5 text-dark font-weight-bold">2-4</span>
+                                    </div>
+                                    <div class="col pr-0">
+                                        <span class="text-muted font-small d-block mb-2">bouton  panier</span>
+                                        <span class="h5 text-dark font-weight-bold">400</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Card -->
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Card -->
+                        <div class="card border-light mb-4 animate-up-5">
+                            <a href="./single-space.html" class="position-relative">
+                                <img src="../assets/img/conference-office.jpg" class="card-img-top rounded-xl p-2" alt="pixel room">
+                            </a>
+                            <div class="card-body">
+                                <a href="./single-space.html">
+                                    <h4 class="h5">Titre photo suivante</h4>
+                                </a>
+                            </div>
+                            <div class="card-footer border-top">
+                                <div class="d-flex justify-content-between">
+                                    <div class="col pl-0">
+                                        <span class="text-muted font-small d-block mb-2">Prix</span>
+                                        <span class="h5 text-dark font-weight-bold">150$</span>
+                                    </div>
+                                    <div class="col">
+                                        <span class="text-muted font-small d-block mb-2">Boutton voir plus</span>
+                                        <span class="h5 text-dark font-weight-bold">2-10</span>
+                                    </div>
+                                    <div class="col pr-0">
+                                        <span class="text-muted font-small d-block mb-2">Boutton acheter</span>
+                                        <span class="h5 text-dark font-weight-bold">200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Card -->
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Card -->
+                        <div class="card border-light mb-4 animate-up-5">
+                            <a href="./single-space.html" class="position-relative">
+                                <img src="../assets/img/lifestyle-office.jpg" class="card-img-top rounded-xl p-2" alt="modern desk">
+                            </a>
+                            <div class="card-body">
+                                <a href="./single-space.html">
+                                    <h4 class="h5">Titre photo encore suivante</h4>
+                                </a>
+                            </div>
+                            <div class="card-footer border-top">
+                                <div class="d-flex justify-content-between">
+                                    <div class="col pl-0">
+                                        <span class="text-muted font-small d-block mb-2">Prix</span>
+                                        <span class="h5 text-dark font-weight-bold">200$</span>
+                                    </div>
+                                    <div class="col">
+                                        <span class="text-muted font-small d-block mb-2">Boutton voir plus</span>
+                                        <span class="h5 text-dark font-weight-bold">10-30</span>
+                                    </div>
+                                    <div class="col pr-0">
+                                        <span class="text-muted font-small d-block mb-2">Boutton panier</span>
+                                        <span class="h5 text-dark font-weight-bold">500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of section -->
+    </main>

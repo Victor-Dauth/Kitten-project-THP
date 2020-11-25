@@ -31,9 +31,11 @@
           <span class="h5 text-dark font-weight-bold">24</span>
         </div>
         %>
-        <div class="col">
-            <%= link_to "Acheter", new_payment_path, class: "btn btn-primary"%>
-        </div>
+        <% if user_signed_in? %>
+          <div class="col">
+            <%= link_to "Ajouter au panier", orders_path(item_id: item.id), method: 'POST' , class: "btn btn-primary"%>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
