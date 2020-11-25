@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password + Use Devise for user authentication
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise-i18n'
+
 gem 'bcrypt', '~> 3.1.7'
 
 # Dotenv to protect sensitive API keys
