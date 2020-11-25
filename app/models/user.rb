@@ -11,9 +11,8 @@ class User < ApplicationRecord
     presence: true,
     length: { in: 2..20 }
     
-  #has_one_attached :avatar
+  has_one_attached :avatar
 
- has_one :cart
-
+  has_one :cart
 
 end

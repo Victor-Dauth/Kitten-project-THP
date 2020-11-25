@@ -57,4 +57,57 @@
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     </div>
   </div>
+
+  <% if user_signed_in? %>
+
+  <div class="link_personal_profile mr-2">
+    <%= active_link_to user_path(current_user.id), class:"btn btn-light rounded-pill d-inline-flex align-items-center", style:"height: 38px"  do %>
+      <%if current_user.avatar.attached?%>
+        <span class="mr-2"><%= image_tag(current_user.avatar, :alt => 'real avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
+      <%else%>
+        <span class="mr-2"><%= image_tag('unnamed.jpg', :alt => 'default avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
+      <% end %>
+      <span><strong><%= current_user.first_name %></strong></span>
+    <% end %>
+  </div>
+
+  <button class="btn btn-light dropdown-toggle rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+  <div class="dropdown-menu dropdown-menu-right text-left mr-3" aria-labelledby="dropdownMenuButton">
+
+    <div class="link_personal_profile">
+      <%= link_to user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 80px"  do %>
+        <%if current_user.avatar.attached?%>
+          <span class="mr-2"><%= image_tag(current_user.avatar, :alt => 'real avatar', class:'rounded-circle', style: 'height:64px;width:64px') %></span>
+        <%else%>
+          <span class="mr-2"><%= image_tag('unnamed.jpg', :alt => 'default avatar', class:'rounded-circle', style: 'height:64px;width:64px') %></span>
+        <% end %>
+        <div class="text-left">
+          <strong><%= current_user.first_name %> <%= current_user.last_name %></strong><br>
+          <span class="text-muted">See your profile</span>
+        </div>
+      <% end %>
+    </div>
+
+    <hr/>
+
+    <div class="link_personal_settings">
+      <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+        <i class="fas fa-cog mr-2"></i>
+        <span>Settings & Privacy</span>
+      <% end %>
+    </div>
+
+    <div class="link_logout">
+      <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+        <i class="fas fa-sign-out-alt mr-2"></i>
+        <span>Log Out</span>
+      <% end %>
+    </div>
+
+  </div>
+
+<% end %>
+
+
 </nav>
