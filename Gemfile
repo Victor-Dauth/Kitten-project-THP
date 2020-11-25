@@ -37,6 +37,12 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
 
+# Active_link_to to see active links on the Front
+gem 'active_link_to', '~> 1.0', '>= 1.0.5'
+
+# Sync with Amazon to store content in the cloud
+gem "aws-sdk-s3", require: false
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
