@@ -6,13 +6,17 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Total: <%= number_to_currency(@total, unit: "€", separator: ".", format: "%n %u") %></span>
     </label>
   </article>
 
+  <input name="total" type="hidden" value=<%= @total %>>
+
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Payer pour le chat"
-          data-amount="500"
-          data-locale="auto"></script>
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="Payer pour les chattons"
+    data-amount="<%= @total.to_d*100 %>"
+    data-currency="eur"
+    data-locale="auto">
+  </script>
 <% end %>

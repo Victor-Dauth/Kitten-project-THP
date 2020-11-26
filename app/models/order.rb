@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
 
-belongs_to :item
-belongs_to :cart
+  belongs_to :item
+  belongs_to :cart
 
   def total
     item.price

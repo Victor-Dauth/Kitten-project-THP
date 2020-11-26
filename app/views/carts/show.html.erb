@@ -6,8 +6,8 @@
   <% end %>
 </ul>
 
-<p>Sous-total Panier</p>
-<p class="text-right"><%= number_to_currency(@cart.total, unit: "€", separator: ".", format: "%n %u") %></p>
+<p>Sous-total Panier :</p>
+<p class=""><%= number_to_currency(@cart.total, unit: "€", separator: ".", format: "%n %u") %></p>
 
-<%= link_to "Passer commande", new_payment_path, class: "btn btn-primary"%>
+<%= link_to "Passer commande", new_payment_path(total: @cart.total), class: "btn btn-primary"%>
 

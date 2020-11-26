@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_user, only: [:show]
+  before_action :user_exists?, :check_user, only: [:show]
 
   def show
     @user = current_user
@@ -25,6 +25,15 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:first_name, :last_name, :avatar)
+  end
+
+  def user_exists?
+    begin
+      @user = User.find(params[:id])
+    rescue ActiveRecord::RecordNotFound  
+      flash[:warning] = "Oups, on dirait que ce compte n'existe pas encore 😬"
+      redirect_to root_path
+    end
   end
 
   def check_user
