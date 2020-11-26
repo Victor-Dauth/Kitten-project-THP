@@ -9,21 +9,6 @@
 
   <h2><%= @user.first_name %> <%= @user.last_name %></h2>
 
-<<<<<<< HEAD
-  <div class="link_edit_profile">
-    <%= link_to edit_user_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
-      <i class="fas fa-user mr-2"></i>
-      <span>Edit Profile</span>
-    <% end %>
-  </div>
-
-  <div class="link_personal_settings">
-    <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
-      <i class="fas fa-cog mr-2"></i>
-      <span>Settings & Privacy</span>
-    <% end %>
-  </div>
-=======
   <p> <strong>Adresse email :</strong> <%= @user.email %> </p>
 
 
@@ -49,6 +34,5 @@
     </div>
 </div>
 
->>>>>>> d04def36d9d785bb2aa22c1dc38be50199c898ec
 
 </div>
