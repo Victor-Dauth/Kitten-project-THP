@@ -1,39 +1,111 @@
-<h2>Sign up</h2>
+<main>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="form-group">
-  <%= f.label :first_name %><br />
-  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
-</div>
 
-<div class="form-group">
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name, class: "form-control" %>
-</div>
+        <!-- Section -->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="text-center text-md-center mb-5 mt-md-0 text-white">
+                        <h1 class="mb-0 h3">S'inscrire</h1>
+                    </div>
+                </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <%= render "devise/shared/error_messages", resource: resource %>
+                            <!-- Form -->
+                            <div class="form-group">
+                                <label for="first_name">Prénom</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fas fa-user">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", :html => {:class => "form-control"}%>
+                                </div>
+                            </div>
+                            <!--End of Form-->
+                            <!-- Form -->
+                            <div class="form-group">
+                                <label for="last_name">Nom de famille</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fas fa-user">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <%= f.text_field :last_name, :html => {:class => "form-control"}%>
+                                </div>
+                            </div>
+                            <!--End of Form-->
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fas fa-envelope">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :html => {:class => "form-control"}%>
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <div class="form-group">
+                                <!-- Form -->
+                                <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                    <% if @minimum_password_length %>
+                                        <em>(<%= @minimum_password_length %> lettres minimum)</em>
+                                    <% end %>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <span class="fas fa-unlock-alt">
+                                                </span>
+                                            </span>
+                                        </div>
+                                        
+                                        <br />
+                                        <%= f.password_field :password, autocomplete: "current-password", :html => {:class => "form-control"} %>
+                                    </div>
+                                </div>
+                                <!-- End of Form -->
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="password_confirm">Confirmer le mot de passe</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+                                        <br />
+                                        <%= f.password_field :password_confirmation, autocomplete: "new-password", :html => {:class => "form-control"} %>
+                                    </div>
+                                </div>   
+                            </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+                            <div class="actions">
+                                <%= f.submit "Inscription" %>
+                            </div>
+                        <% end %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                        <div class="form-group">
+                            Vous avez déjà un compte ?
+                            <%= render "devise/shared/links" %>
+                        </div>
 
-<%= render "devise/shared/links" %>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
