@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <main>
 <!-- Section -->
     <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0" data-background="">
@@ -84,3 +85,75 @@
         </div>
     </section>
 </main>
+=======
+ <div class="container">
+
+  <div class="row justify-content-center">
+
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+
+
+  <h2>Se connecter</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "form-signin mt-3"}) do |f| %>
+      <div class="field">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <span class="fas fa-envelope">
+                      </span>
+                  </span>
+              </div>
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field mt-3">
+         <div class="form-group">
+                                <!-- Form -->
+          <div class="form-group">
+          <label for="password">Mot de passe</label>
+              <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> lettres minimum)</em>
+              <% end %>
+              <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">
+                          <span class="fas fa-unlock-alt">
+                          </span>
+                      </span>
+                  </div><br />
+        <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field mt-3">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions mb-4 mt-3">
+        <%= f.submit "Connexion", class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+
+    <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+          </div>
+      </div>
+    </div>
+
+</div>
+>>>>>>> develop

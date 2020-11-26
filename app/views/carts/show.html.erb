@@ -1,13 +1,27 @@
-<ul>Liste des produits du panier
+<div class="container my-5", style="width:700px">
 
-<% @cart.orders.each do |item| %>
-  <li><%= item.item.title %> - <%= number_to_currency(item.item.price, unit: "€", separator: ".", format: "%n %u") %> </li>
-  <%= button_to "supprimer du panier", item, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: "btn btn-primary" %>
-  <% end %>
-</ul>
+  <h1 class="mb-5">Liste des produits du panier</h1>
+    
+  <% @cart.orders.each do |item| %>
+  
+    <p><div class="d-flex flex-row align-items-center mb-3">
+      <%= image_tag item.item.image_url, class: "image-md mr-3" %>
+      <%= item.item.title %> - <%= number_to_currency(item.item.price, unit: "€", separator: ".", format: "%n %u") %> 
+     
+    <%= button_to "supprimer du panier", item, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: "btn btn-secondary btn-sm ml-3" %>
+      </div>
+    </p>
+    <% end %>
+  
+    <h4 class="mt-5">Sous-total panier : <%= number_to_currency(@cart.total, unit: "€", separator: ".", format: "%n %u") %></h4>
+
 
 <p>Sous-total Panier :</p>
 <p class=""><%= number_to_currency(@cart.total, unit: "€", separator: ".", format: "%n %u") %></p>
 
-<%= link_to "Passer commande", new_payment_path(total: @cart.total), class: "btn btn-primary"%>
+<% if @cart.total.to_d > 1 %>
+  <%= link_to "Passer commande", new_payment_path(total: @cart.total), class: "btn btn-primary"%>
+<% end %>
 
+
+</div>

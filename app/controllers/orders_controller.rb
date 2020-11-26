@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to cart_path(current_user), notice: 'Element supprimé.' }
+      format.html { redirect_to cart_path(current_user.cart.id), notice: 'Element supprimé.' }
     end
   end
 

@@ -1,6 +1,6 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-theme-primary navbar-expand-lg py-lg-3 px-lg-6 navbar-dark">
   <div class="container">
-    <div >
+    <div>
       <a class="navbar-brand @@logo_classes" href="<%= root_path %>" >
         <%= image_tag('logo.jpg', class: 'common', alt: 'Logo light') %>
       </a>
@@ -75,6 +75,11 @@
 
     <div class="link_personal_profile">
       <%= link_to user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 80px"  do %>
+        <%if current_user.avatar.attached?%>
+        <span class="mr-2"><%= image_tag(current_user.avatar, :alt => 'real avatar', class:'rounded-circle', style: 'height:64px;width:64px') %></span>
+      <%else%>
+        <span class="mr-2"><%= image_tag('unnamed.jpg', :alt => 'default avatar', class:'rounded-circle', style: 'height:64px;width:64px') %></span>
+      <% end %>
         <div class="text-left">
           <strong><%= current_user.first_name %> <%= current_user.last_name %></strong><br>
           <span class="text-muted">Voir mon profil</span>
