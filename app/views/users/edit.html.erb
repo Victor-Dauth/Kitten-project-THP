@@ -1,25 +1,26 @@
+
 <div class="container my-5", style="max-width:400px">
       
       <%= form_for @user, html: { class: "form-signin mt-3" } do |f| %>
-        <h1 class="h3 mb-3 font-weight-normal text-center">Edit profile</h1>
+        <h1 class="h3 mb-3 font-weight-normal text-center">Modifier mon profil</h1>
 
         <div class="form-group">
-          <%= f.label :first_name %><br />
+          <%= f.label "Prénom" %><br />
           <%= f.text_field :first_name, class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label :last_name %><br />
+          <%= f.label "Nom de famille" %><br />
           <%= f.text_field :last_name, class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label :profile_picture %><br />
+          <%= f.label "Photo de profil" %><br />
           <%= f.file_field :avatar, class: "form-control" %>
         </div>
 
         <div class="actions mt-5">
-          <%= f.submit "Edit", class: "btn btn-lg btn-primary btn-block" %>
+          <%= f.submit "Modifier", class: "btn btn-lg btn-primary btn-block" %>
         </div>
 
       <% end %>
