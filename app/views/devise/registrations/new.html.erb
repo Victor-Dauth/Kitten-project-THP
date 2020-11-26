@@ -1,39 +1,126 @@
-<h2>Sign up</h2>
+<main>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="preloader bg-dark flex-column justify-content-center align-items-center">
+        <div class="position-relative">
+            <img src="../assets/img/brand/light-without-letter.svg" alt="Logo loader">
+            <img src="../assets/img/brand/letter.svg" class="rotate-letter" alt="Letter loader">
+        </div>
+    </div>
 
-<div class="form-group">
-  <%= f.label :first_name %><br />
-  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
-</div>
+        <!-- Section -->
+    <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0" data-background="../assets/img/form-image.jpg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="text-center text-md-center mb-5 mt-md-0 text-white">
+                        <h1 class="mb-0 h3">S'inscrire</h1>
+                    </div>
+                </div>
 
-<div class="form-group">
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name, class: "form-control" %>
-</div>
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <!-- Form -->
+                            <div class="form-group">
+                                <label for="exampleInputIcon4">Your email</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                                    </div>
+                                    <input class="form-control" id="exampleInputIcon4" placeholder="example@company.com" type="text" aria-label="email adress">
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <div class="form-group">
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                        </div>
+                                        <input class="form-control" id="password" placeholder="Password" type="password" aria-label="Password" required>
+                                    </div>
+                                </div>
+                                <!-- End of Form -->
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="password_confirm">Confirm Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                        </div>
+                                        <input class="form-control" id="password_confirm" placeholder="Confirm password" type="password" aria-label="Password" required>
+                                    </div>
+                                </div>
+                                <!-- End of Form -->
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="terms">
+                                    <label class="form-check-label" for="terms">
+                                        <span class="small">I agree to the <a class="text-secondary" href="./terms.html">terms and conditions</a></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-primary">Create an account</button>
+                        <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                        <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                            <span class="font-weight-normal">
+                                Already have an account?
+                                <a href="./sign-in.html" class="font-weight-bold">Login here</a>
+                            </span>
+                        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+                    </div>
+                </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+            </div>
+        </div>
+    </section>
+</main>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <!-- Core -->
+<script src="../vendor/jquery/dist/jquery.min.js"></script>
+<script src="../vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../vendor/headroom.js/dist/headroom.min.js"></script>
+<script src="../vendor/onscreen/dist/on-screen.umd.min.js"></script>
 
-<%= render "devise/shared/links" %>
+<!-- NoUISlider -->
+<script src="../vendor/nouislider/distribute/nouislider.min.js"></script>
+
+<!-- Bootstrap Datepicker -->
+<script src="../vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+<!-- jQuery Waypoints -->
+<script src="../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+
+<!-- Owl acrousel -->
+<script src="../vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+
+<!-- Smooth scroll -->
+<script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Fancybox -->
+<script src="../vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+
+<!-- Sticky sidebar -->
+<script src="../vendor/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
+
+<!-- Mapbox & Leaflet.js -->
+<script src="../vendor/leaflet/dist/leaflet.js"></script>
+
+<!-- Chartist -->
+<script src="../vendor/chartist/dist/chartist.min.js"></script>
+<script src="../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+<!-- Vector Maps -->
+<script src="../vendor/jqvmap/dist/jquery.vmap.min.js"></script>
+<script src="../vendor/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
+
+<!-- Sliderform -->
+<script src="../assets/js/jquery.slideform.js"></script>
+
+<!-- Spaces custom Javascript -->
+<script src="../assets/js/spaces.js"></script>
