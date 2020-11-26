@@ -1,0 +1,10 @@
+<h1> Voici la liste de tes commande </h1>
+
+<% @recap_orders.where(user_id: current_user.id).each_with_index do |recap_order, index| %>
+  <h3> Ta Commande n°<%= index + 1%> :</h3>
+  <ul>
+    <% recap_order.orders.each do |order| %>
+      <li> <%= order.item.title %> - <%= number_to_currency(order.item.price, unit: "€", separator: ".", format: "%n %u") %> </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
 
   else 
     
-    #create_commande
+    create_recap_order(@user)
     mails_order(@user)
     reset_cart(@user)
   end
@@ -39,8 +39,13 @@ class PaymentsController < ApplicationController
     OrderMailer.purchase_confirm_admin(user).deliver_now
   end
 
-  def create_commande
+  def create_recap_order(user)
 
+    @recap_order = RecapOrder.create(user: user)
+
+    user.cart.orders.each do |order|
+      order.update(recap_order: @recap_order)
+    end
   end
 
   def reset_cart(user)
