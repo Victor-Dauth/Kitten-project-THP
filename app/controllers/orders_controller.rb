@@ -12,14 +12,8 @@ class OrdersController < ApplicationController
   def create
     item = Item.find(params[:item_id])
     @order = @cart.orders.create(item: item)
-    flash[:sucess] = 'Ajouté au panier !'
-    # respond_to do |format|
-    #   if @order.save
-    #     redirect_to @order.cart
-    #   else
-    #     redirect_to root_path
-    #   end
-    # end
+    #flash[:notice] = "Ajouté au panier !"
+    #redirect_to root_path
   end
 
   def destroy
