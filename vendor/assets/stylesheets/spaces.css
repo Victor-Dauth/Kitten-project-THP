@@ -19530,7 +19530,7 @@ a.text-github:hover, a.text-github:focus {
   h3 {
         page-break-after: avoid;
     }
-        page {
+  @    page {
         size: a3;
     }
 
@@ -30807,9 +30807,6 @@ button.section-github:focus {
  */
 .footer {
     position: relative;
-    margin-bottom: 0px;
-    left: 0px;
-    right: 0px;
 }
 
 .footer h3, .footer h5, .footer .h3, .footer .h5 {
