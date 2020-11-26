@@ -61,6 +61,7 @@
 
                         <% end %>
 
+                            <!--
                             <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
                                 <span class="font-weight-normal">
                                     Pas encore de compte ?
@@ -81,8 +82,12 @@
                                     <a href="<%= new_user_confirmation_path %>" class="font-weight-bold">Renvoyer</a>
                                 </span>
                             </div>
+                            -->
 
-                        <!-- <%= #render "devise/shared/links" %> -->
+                        <div class="form-group">
+                            <%= render "devise/shared/links" %>
+                        </div>
+
                     </div>
                 </div>
             </div>
