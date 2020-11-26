@@ -6,12 +6,10 @@ class ItemsController < ApplicationController
 
   def show
   	@item = Item.find(params[:id])
+    @item_rand = Item.all.reject {|item| item == @item }.sample(3)
+
   end
 
 
-	def random
-	   random = Item.pluck(:id)
-	   random.sample
-	end
   
 end
