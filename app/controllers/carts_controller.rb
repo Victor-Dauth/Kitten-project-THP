@@ -1,13 +1,7 @@
 class CartsController < ApplicationController
     before_action :authenticate_user!
-
-  def index
-    @carts = Cart.all
-  end
-
-  def show
-    @cart = Cart.find_by_id(params[:id])
-  end
+    before_action :cart_exists?, :is_my_cart?, only: [:show]
+    #before_action :is_my_cart?, only: [:show]
 
   def new
     @cart = Cart.new
@@ -25,11 +19,30 @@ class CartsController < ApplicationController
     end
   end
 
+  def show
+    @cart = Cart.find(params[:id])
+  end
 
 private
 
   def cart_params
     params.fetch(:cart, {})
+  end
+
+  def cart_exists?
+    begin
+      @cart = Cart.find(params[:id])
+    rescue ActiveRecord::RecordNotFound  
+      flash[:warning] = "Oups, on dirait que ce panier n'existe pas encore 😬"
+      redirect_to root_path
+    end
+  end
+  
+  def is_my_cart?
+    if Cart.find(params[:id]).user_id != current_user.id
+      flash[:warning] = "Ah bon on va sur les paniers des autres pour vérifier que le controller est sécure 😁 ?"
+      redirect_to root_path
+    end
   end
 
 end
