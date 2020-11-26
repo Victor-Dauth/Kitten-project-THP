@@ -1,15 +1,16 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-theme-primary navbar-expand-lg py-lg-3 px-lg-6 navbar-dark">
   <div class="container">
-    <a class="navbar-brand @@logo_classes" href="<%= root_path %>">
-      <%= image_tag('logo.jpg', class: 'navbar-brand-dark common', height: '40', alt: 'Logo light') %>
-      <%= image_tag('logo.jpg', class: 'navbar-brand-light common', height: '40', alt: 'Logo dark') %>
-    </a>
+    <div >
+      <a class="navbar-brand @@logo_classes" href="<%= root_path %>" style="height: 80px, width:auto">
+        <%= image_tag('logo.jpg', class: 'common', height: '80px', alt: 'Logo light') %>
+      </a>
+    </div>
     <div class="navbar-collapse collapse" id="navbar_global" style="">
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-6 collapse-brand">
             <a href="<%= root_path %>">
-              <%= image_tag('logo.jpg', height: '35', alt: 'Logo Impact') %>
+              <%= image_tag('logo.jpg', height: '80', alt: 'Logo Impact') %>
             </a>
           </div>
           <div class="col-6 collapse-close">
@@ -88,9 +89,16 @@
     <hr/>
 
     <div class="link_personal_settings">
+      <%= link_to edit_user_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+        <i class="fas fa-user mr-2"></i>
+        <span>Modifier mon profil</span>
+      <% end %>
+    </div>
+
+    <div class="link_personal_settings">
       <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
         <i class="fas fa-cog mr-2"></i>
-        <span>Modifier mon profil</span>
+        <span>Modifier mes informations</span>
       <% end %>
     </div>
 
