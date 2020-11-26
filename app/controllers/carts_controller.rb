@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
     before_action :authenticate_user!
     before_action :cart_exists?, :is_my_cart?, only: [:show]
-    #before_action :is_my_cart?, only: [:show]
 
   def new
     @cart = Cart.new
