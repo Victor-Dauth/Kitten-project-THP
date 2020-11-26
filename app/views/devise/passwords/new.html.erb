@@ -1,16 +1,46 @@
-<h2>Forgot your password?</h2>
+ <div class="container">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="row justify-content-center">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+            	<h1 class="mb-5">Mot de passe oublié ?</h1>
 
-<%= render "devise/shared/links" %>
+					<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "form-signin mt-3", method: :post }) do |f| %>
+					  <%= render "devise/shared/error_messages", resource: resource %>
+
+					  <div class="field">
+					    <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fas fa-envelope">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <br />
+					    <%= f.email_field :email, autofocus: true, class: "form-control",autocomplete: "email" %>
+					  </div>
+
+					  <div class="actions mb-4">
+					    <%= f.submit "Changer mon mot de passe", class: "btn btn-lg btn-primary btn-block" %>
+					  </div>
+					<% end %>
+
+					<div class="form-group">
+						Vous vous souvenez ?
+						<%= render "devise/shared/links" %>
+					</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			</div>
+
+		</div>
+
+
