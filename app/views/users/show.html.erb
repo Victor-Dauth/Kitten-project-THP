@@ -11,13 +11,19 @@
   <p> <strong>Adresse email :</strong> <%= @user.email %> </p>
 
 
+  <div class="link_personal_settings">
+      <%= link_to edit_user_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+        <i class="fas fa-user mr-2"></i>
+        <span>Modifier mon profil</span>
+      <% end %>
+    </div>
 
-  <div class="link_edit_profile">
-    <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
-      <i class="fas fa-user mr-2"></i>
-      <span>Modifier mon profil</span>
-    <% end %>
-  </div>
+    <div class="link_personal_settings">
+      <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+        <i class="fas fa-cog mr-2"></i>
+        <span>Modifier mes informations</span>
+      <% end %>
+    </div>
 
 </br>
 
