@@ -30807,6 +30807,9 @@ button.section-github:focus {
  */
 .footer {
     position: relative;
+    margin-bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
 
 .footer h3, .footer h5, .footer .h3, .footer .h5 {

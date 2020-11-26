@@ -2,7 +2,8 @@
   <div class="row no-gutters align-items-center">
     <div class="col-12 col-lg-6 col-xl-5" style="height: 300px;">
       <a href="<%= item_path(item.id) %>">
-        <img src="<%= item.image_url %>" alt="lifestyle office" class="card-img p-2 rounded-xl" style="height: 300px; width: auto">
+        
+        <%= image_tag item.image_url, :alt => "kitten img", class:"card-img p-2 rounded-xl", style: "height: 300px; width: auto" %>
       </a>
     </div>
     <div class="col-12 col-lg-6 col-xl-7">

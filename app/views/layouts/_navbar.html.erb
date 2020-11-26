@@ -1,15 +1,16 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-theme-primary navbar-expand-lg py-lg-3 px-lg-6 navbar-dark">
   <div class="container">
-    <a class="navbar-brand @@logo_classes" href="<%= root_path %>">
-      <%= image_tag('logo.jpg', class: 'navbar-brand-dark common', height: '40', alt: 'Logo light') %>
-      <%= image_tag('logo.jpg', class: 'navbar-brand-light common', height: '40', alt: 'Logo dark') %>
-    </a>
+    <div >
+      <a class="navbar-brand @@logo_classes" href="<%= root_path %>" >
+        <%= image_tag('logo.jpg', class: 'common', alt: 'Logo light') %>
+      </a>
+    </div>
     <div class="navbar-collapse collapse" id="navbar_global" style="">
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-6 collapse-brand">
             <a href="<%= root_path %>">
-              <%= image_tag('logo.jpg', height: '35', alt: 'Logo Impact') %>
+              <%= image_tag('logo.jpg', alt: 'Logo Impact') %>
             </a>
           </div>
           <div class="col-6 collapse-close">
@@ -37,8 +38,9 @@
     </div>
     <div class="d-none d-lg-block @@cta_button_classes">
       <% if user_signed_in? %>
-
-        <a href="<%= cart_path(current_user)%>" class="btn btn-md btn-secondary animate-up-2"><i class="fas fa-shopping-bag mr-2"></i>Mon panier</a>
+        <% if current_user.cart != nil %>
+          <a href="<%= cart_path(current_user.cart.id)%>" class="btn btn-md btn-secondary animate-up-2"><i class="fas fa-shopping-bag mr-2"></i>Mon panier</a>
+        <%end%>
       <% else %>
         <a href="<%= new_user_session_path %>" class="btn btn-md btn-outline-white animate-up-2">
           <span class="d-xl-inline">Se connecter</span>
@@ -56,8 +58,13 @@
 
   <% if user_signed_in? %>
 
-  <div class="link_personal_profile mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= active_link_to user_path(current_user.id), class:"btn btn-light rounded-pill d-inline-flex align-items-center", style:"height: 38px"  do %>
+  <div class="link_personal_profile mr-2 btn d-inline-flex btn-md align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= active_link_to user_path(current_user.id)  do %>
+      <%if current_user.avatar.attached?%>
+        <span class="mr-2"><%= image_tag(current_user.avatar, :alt => 'real avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
+      <%else%>
+        <span class="mr-2"><%= image_tag('unnamed.jpg', :alt => 'default avatar', class:'rounded-circle', style: 'height:32px;width:32px') %></span>
+      <% end %>
       <span><strong><%= current_user.first_name %></strong></span>
     <% end %>
   </div>
@@ -78,9 +85,16 @@
     <hr/>
 
     <div class="link_personal_settings">
+      <%= link_to edit_user_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+        <i class="fas fa-user mr-2"></i>
+        <span>Modifier mon profil</span>
+      <% end %>
+    </div>
+
+    <div class="link_personal_settings">
       <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
         <i class="fas fa-cog mr-2"></i>
-        <span>Modifier mon profil</span>
+        <span>Modifier mes informations</span>
       <% end %>
     </div>
 

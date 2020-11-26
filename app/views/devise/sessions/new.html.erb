@@ -1,26 +1,88 @@
-<h2>Log in</h2>
+<main>
+<!-- Section -->
+    <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0" data-background="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="text-center text-md-center mb-5 mt-md-0 text-white">
+                        <h1 class="mb-0 h3">Se connecter</h1>
+                    </div>
+                </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fas fa-envelope">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :html => {:class => "form-control"}%>
+                                </div>
+                            </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fas fa-unlock-alt">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <%= f.password_field :password, autocomplete: "current-password", :html => {:class => "form-control"} %>
+                                </div>
+                            </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <%= f.check_box :remember_me, :html => {:class => "form-check-input"} %>
+                                    <label class="form-check-label" for="remember">
+                                        <%= f.label :remember_me, :html => {:class => "form-check-label", :for => "remember"}%>
+                                    </label>
+                                </div>
+                            </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+                            <div class="actions">
+                                <%= f.submit "Connexion"%>
+                            </div>
 
-<%= render "devise/shared/links" %>
+                        <% end %>
+
+                            <!--
+                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                <span class="font-weight-normal">
+                                    Pas encore de compte ?
+                                    <a href="<%= new_user_registration_path %>" class="font-weight-bold">S'inscrire</a>
+                                </span>
+                            </div>
+
+                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                <span class="font-weight-normal">
+                                    Mot de passe oublié ?
+                                    <a href="<%= new_user_password_path %>" class="font-weight-bold">Réinitialiser</a>
+                                </span>
+                            </div>
+
+                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                <span class="font-weight-normal">
+                                    Pas reçu le mail de confirmation ?
+                                    <a href="<%= new_user_confirmation_path %>" class="font-weight-bold">Renvoyer</a>
+                                </span>
+                            </div>
+                            -->
+
+                        <div class="form-group">
+                            <%= render "devise/shared/links" %>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

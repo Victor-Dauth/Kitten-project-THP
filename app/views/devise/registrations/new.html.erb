@@ -1,39 +1,73 @@
-<h2>Sign up</h2>
+<main>
+        <!-- Section -->
+    <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0" data-background="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="text-center text-md-center mb-5 mt-md-0 text-white">
+                        <h1 class="mb-0 h3">S'inscrire</h1>
+                    </div>
+                </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <!-- Form -->
+                            <div class="form-group">
+                                <label for="exampleInputIcon4">Your email</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                                    </div>
+                                    <input class="form-control" id="exampleInputIcon4" placeholder="example@company.com" type="text" aria-label="email adress">
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <div class="form-group">
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                        </div>
+                                        <input class="form-control" id="password" placeholder="Password" type="password" aria-label="Password" required>
+                                    </div>
+                                </div>
+                                <!-- End of Form -->
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="password_confirm">Confirm Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                        </div>
+                                        <input class="form-control" id="password_confirm" placeholder="Confirm password" type="password" aria-label="Password" required>
+                                    </div>
+                                </div>
+                                <!-- End of Form -->
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="terms">
+                                    <label class="form-check-label" for="terms">
+                                        <span class="small">I agree to the <a class="text-secondary" href="./terms.html">terms and conditions</a></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-primary">Create an account</button>
+                        <% end %>
 
-<div class="form-group">
-  <%= f.label :first_name %><br />
-  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
-</div>
+                        <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                            <span class="font-weight-normal">
+                                Already have an account?
+                                <a href="./sign-in.html" class="font-weight-bold">Login here</a>
+                            </span>
+                        </div>
 
-<div class="form-group">
-  <%= f.label :last_name %><br />
-  <%= f.text_field :last_name, class: "form-control" %>
-</div>
+                    </div>
+                </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+            </div>
+        </div>
+    </section>
+</main>

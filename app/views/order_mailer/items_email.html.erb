@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour <%= @user.first_name%></h1>
+    <p>
+      Nous sommes ravie que nos chatons t'ai plus !!!
+    </p>
+    <p>
+      Voici la liste des photos que tu as commandé :
+    </p>
+    <ul>
+      <% @user.cart.orders.each do |order| %>
+        <li>
+          <%= image_tag order.item.image_url %>
+        </li>
+      <%end%>
+    </ul>
+  </body>
+</html>
