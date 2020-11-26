@@ -9,5 +9,7 @@
 <p>Sous-total Panier :</p>
 <p class=""><%= number_to_currency(@cart.total, unit: "€", separator: ".", format: "%n %u") %></p>
 
-<%= link_to "Passer commande", new_payment_path(total: @cart.total), class: "btn btn-primary"%>
+<% if @cart.total.to_d > 1 %>
+  <%= link_to "Passer commande", new_payment_path(total: @cart.total), class: "btn btn-primary"%>
+<% end %>
 

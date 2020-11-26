@@ -9,14 +9,7 @@
       Nous sommes ravie que nos chatons t'ai plus !!!
     </p>
     <p>
-      Voici la liste des photos que tu as commandé :
+      Tu trouvera en PJ les photos que tu as commandé
     </p>
-    <ul>
-      <% @user.cart.orders.each do |order| %>
-        <li>
-          <%= image_tag order.item.image_url %>
-        </li>
-      <%end%>
-    </ul>
   </body>
 </html>
