@@ -10,7 +10,7 @@
     </p>
     <p>
       Tu as eu une nouvelle commande de <%= @user.cart.total %> € !!! <br>
-      Voici le numéro de facture : (mettre l'id de la facture de la commande) <br>
+      Voici le numéro de facture : <%= @user.recap_orders.last.id %> <br>
       C'est top cool
     </p>
   </body>
