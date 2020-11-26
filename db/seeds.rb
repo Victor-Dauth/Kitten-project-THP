@@ -12,4 +12,4 @@ Item.destroy_all
 item = Item.create(title: Faker::Superhero.name, description: Faker::Lorem.sentence(word_count: 10), price: Faker::Number.decimal(l_digits: 2), image_url: "chaton_#{id}.jpg")
 end
 
-user = User.create(email: 'kitty-pic@yopmail.com', last_name: 'pic', first_name: 'kitty', password: '123456')
+#user = User.create(email: 'kitty-pic@yopmail.com', last_name: 'pic', first_name: 'kitty', password: '123456')

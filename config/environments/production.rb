@@ -98,7 +98,7 @@ Rails.application.configure do
   # Mailer sync with devise gem
   # Like dev ?
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.default_url_options = { :host => 'kitten-thp-v.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'kitty-pic.herokuapp.com' }
 end
 
 

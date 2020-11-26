@@ -2,21 +2,15 @@
   <%= link_to "Connexion", new_session_path(resource_name) %><br />
 <% end %>
 
-<br />
-
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>Pas encore de compte ?
   <%= link_to "S'inscrire", new_registration_path(resource_name) %><br />
 <% end %>
-
-<br />
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>Mot de passe oublié ?
   <%= link_to "Réinitialiser", new_password_path(resource_name) %><br />
 <% end %>
 
-<br />
-
-<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>Une erreur ?
   <%= link_to "Renvoyer le email de confirmation", new_confirmation_path(resource_name) %><br />
 <% end %>
 
@@ -26,6 +20,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to "Connexion avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end %>
 <% end %>
